@@ -36,6 +36,7 @@
     this.getDataSet = getDataSet;
     this.addDataService = addDataService;
     this.addCKANService = addCKANService;
+    this.removeService = removeService;
 
     if (typeof bindCB.onBind === 'function') {
       bindCB.onBind(this);
@@ -82,4 +83,7 @@
     doRPC.call(this,"addCKANService",[name, resourceId],successCB,errorCB);
   };
 
+  var removeService = function(serviceDef, successCB, errorCB) {
+    doRPC.call(this,"removeService",[serviceDef], successCB, errorCB);
+  };
 }());
