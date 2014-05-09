@@ -41,6 +41,7 @@
     this.listSheets = listSheets;
     this.getSheet = getSheet;
     this.saveSheet = saveSheet;
+    this.deleteSheet = deleteSheet;
 
     if (typeof bindCB.onBind === 'function') {
       bindCB.onBind(this);
@@ -105,5 +106,9 @@
 
   var saveSheet = function(json, successCB, errorCB) {
     doRPC.call(this,"saveSheet",[json], successCB, errorCB);
+  };
+
+  var deleteSheet = function(id, successCB, errorCB) {
+    doRPC.call(this,"deleteSheet",[id], successCB, errorCB);
   };
 }());
