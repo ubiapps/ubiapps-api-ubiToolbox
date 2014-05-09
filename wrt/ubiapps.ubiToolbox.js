@@ -37,6 +37,10 @@
     this.addDataService = addDataService;
     this.addCKANService = addCKANService;
     this.removeService = removeService;
+    this.getURL = getURL;
+    this.listSheets = listSheets;
+    this.getSheet = getSheet;
+    this.saveSheet = saveSheet;
 
     if (typeof bindCB.onBind === 'function') {
       bindCB.onBind(this);
@@ -85,5 +89,21 @@
 
   var removeService = function(serviceDef, successCB, errorCB) {
     doRPC.call(this,"removeService",[serviceDef], successCB, errorCB);
+  };
+
+  var getURL = function(url, successCB, errorCB) {
+    doRPC.call(this,"getURL",[url], successCB, errorCB);
+  };
+
+  var listSheets = function(successCB, errorCB) {
+    doRPC.call(this,"listSheets", [], successCB, errorCB);
+  };
+
+  var getSheet = function(id, successCB, errorCB) {
+    doRPC.call(this,"getSheet", [id], successCB, errorCB);
+  };
+
+  var saveSheet = function(json, successCB, errorCB) {
+    doRPC.call(this,"saveSheet",[json], successCB, errorCB);
   };
 }());
