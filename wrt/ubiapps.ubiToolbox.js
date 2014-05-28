@@ -38,6 +38,7 @@
     this.addCKANService = addCKANService;
     this.removeService = removeService;
     this.getURL = getURL;
+    this.postURL = postURL;
     this.listSheets = listSheets;
     this.getSheet = getSheet;
     this.saveSheet = saveSheet;
@@ -94,6 +95,10 @@
 
   var getURL = function(url, successCB, errorCB) {
     doRPC.call(this,"getURL",[url], successCB, errorCB);
+  };
+
+  var postURL = function(url, data, successCB, errorCB) {
+    doRPC.call(this,"postURL",[url, data], successCB, errorCB);
   };
 
   var listSheets = function(successCB, errorCB) {
